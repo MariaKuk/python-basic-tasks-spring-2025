@@ -7,3 +7,7 @@
 - OCT (восьмеричная)
 - HEX (шестнадцатеричная)
 """
+
+for num in range(16):
+    # print(num, bin(num), oct(num), hex(num))
+    print(f"{num:2} | {num:04b} | {num:02o} | {num:02X}")

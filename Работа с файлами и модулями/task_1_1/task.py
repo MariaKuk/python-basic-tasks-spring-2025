@@ -1,6 +1,14 @@
-if __name__ == '__main__':
+def get_password_from_file():
+    filename = "top_secret.txt"
+    with open(filename, encoding="utf-8") as f:
+        password = f.read().rstrip()
+
+    return password
+
+
+if __name__ == "__main__":
     # Заранее определённый пароль
-    correct_password = "SecurePass123"
+    correct_password = get_password_from_file()
 
     # Запросить у пользователя ввод пароля
     user_input = input("Введите пароль: ")

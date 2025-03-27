@@ -4,5 +4,13 @@
 У вас есть список расходов за каждый день.
 
 Напишите программу, которая подсчитывает сумму расходов за неделю.
+Проверьте с помощью `assert` результат
 """
+
 expenses = [150, 300, 50, 400, 250, 100, 500]  # расходы на продукты в течение недели
+
+total_expenses = 0
+for expense in expenses:
+    total_expenses += expense
+
+assert total_expenses == sum(expenses)

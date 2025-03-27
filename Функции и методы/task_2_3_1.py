@@ -9,7 +9,7 @@
 Распечатать список категорий трат по дням недели.
 """
 
-days = ["Понедельник", "Вторник"]
+days = ["Понедельник", "Вторник", "Среда"]
 expenses = [50, 200, 400, 150, 80, 350, 100]
 
 
@@ -25,4 +25,6 @@ def get_expense_category(expense_):
 list_categories = []
 for expense in expenses:
     list_categories.append(get_expense_category(expense))
-print(list_categories)
+
+for day, expense in zip(days, expenses):
+    print(day, expense)

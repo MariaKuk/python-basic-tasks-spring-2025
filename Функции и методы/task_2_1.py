@@ -9,10 +9,28 @@
 у которых размер скидки не меньше заданного значения.
 """
 
-discount = {
+discount_products = {
     "яблоко": 10,
     "банан": 5,
     "молоко": 20,
     "хлеб": 0,
     "сыр": 15,
 }
+
+
+def filter_discount_product(products, discount):
+    filter_products = {}
+
+    for (
+        product,
+        current_discount,
+    ) in products.items():  # Перебераю по порядку пары ключ-значение
+        if current_discount >= discount:  # если скидка не меньше заданной
+            filter_products[product] = (
+                current_discount  # В новый словарь добавляю элемент
+            )
+
+    return filter_products
+
+
+print(filter_discount_product(discount_products, 20))

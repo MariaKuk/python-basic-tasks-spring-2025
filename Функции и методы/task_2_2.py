@@ -18,3 +18,15 @@ products = [
     {"name": "хлеб", "price": 50, "discount": 0},
     {"name": "сыр", "price": 300, "discount": 15},
 ]
+
+
+def get_discount_price(products_):
+    list_price = []
+    for product in products_:  # product - словарь
+        price_with_discount = product["price"] * (1 - product["discount"] * 0.01)
+        list_price.append(price_with_discount)
+
+    return list_price
+
+
+print(get_discount_price(products))
