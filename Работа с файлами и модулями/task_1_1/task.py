@@ -1,12 +1,8 @@
-if __name__ == '__main__':
-    # Заранее определённый пароль
-    correct_password = "SecurePass123"
+function fetchInternships() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  sheet.clearContents();
+  sheet.appendRow(['Дата публикации', 'Название стажировки', 'Компания', 'Город', 'Формат', 'Срок подачи заявки', 'Ссылка на вакансию']);
 
-    # Запросить у пользователя ввод пароля
-    user_input = input("Введите пароль: ")
-
-    # Проверка введённого пароля
-    if user_input == correct_password:
-        print("Доступ разрешён")
-    else:
-        print("Доступ запрещён")
+  var url = 'https://career.habr.com/vacancies?type=internship&city_id=678'; // Москва
+  var response = UrlFetchApp.fetch(url);
+  var content = response.getContentText();
